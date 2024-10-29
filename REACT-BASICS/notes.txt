@@ -1,0 +1,16 @@
+//static variable - maxDailyUsage
+{ firstArgument: {}, propertyName: 'email' }
+{
+  firstArgument: [class User] { maxDailyUsage: 12 },
+  propertyName: 'maxDailyUsage'
+}
+28
+28
+24
+
+//normal 
+{ firstArgument: {}, propertyName: 'email' }
+{ firstArgument: {}, propertyName: 'maxDailyUsage' }
+28
+28
+24

@@ -1,0 +1,69 @@
+The steps are basically the same as above:
+
+Add TypeScript.
+Add tsconfig.json.
+Convert a file to TypeScript.
+Start converting the rest of your files by renaming them from .jsx to .tsx and .js to .ts.
+Celebrate!
+
+
+1. Setting up your Directories
+
+projectRoot
+├── src
+│   ├── file1.js
+│   └── file2.js
+├── build
+└── tsconfig.json (initially will not there, after step 2)
+
+2. Writing a Configuration File - tsconfig.json
+
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "target": "es5"
+  },
+  "include": ["./src/**/*"]
+}
+
+3. npm y --init
+
+npm i typescript @types/typescript
+
+
+4. Integrating with Build Tools
+Gulp - 
+
+Webpack
+Webpack integration is pretty simple. You can use ts-loader, a TypeScript loader, combined with source-map-loader for easier debugging. Simply run
+
+npm install ts-loader source-map-loader
+npm install webpack
+
+5. create webpack.config.js  under src
+
+module.exports = {
+  entry: "./src/index.ts",
+  output: {
+    filename: "./dist/bundle.js",
+  },
+  // Enable sourcemaps for debugging webpack's output.
+  devtool: "source-map",
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
+  },
+  module: {
+    rules: [
+      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+      { test: /\.tsx?$/, loader: "ts-loader" },
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      { test: /\.js$/, loader: "source-map-loader" },
+    ],
+  },
+  // Other options...
+};
+
+
+https://leanylabs.com/blog/migrate-javascript-to-typescript/

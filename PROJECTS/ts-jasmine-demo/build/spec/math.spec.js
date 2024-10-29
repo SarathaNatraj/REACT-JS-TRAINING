@@ -1,0 +1,39 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const math_1 = require("../math");
+const math_2 = require("../math");
+/**
+ * when you want to compare the number euqlity, greater than, less than use following matchers
+ */
+describe('two plus two', () => {
+    it('it should return true', function () {
+        const value = (0, math_1.add)(2, 2);
+        expect(value).toBeGreaterThan(3);
+        expect(value).toBeGreaterThanOrEqual(3.5);
+        expect(value).toBeLessThan(5);
+        expect(value).toBeLessThanOrEqual(4.5);
+        // toBe and toEqual are equivalent for numbers
+        expect(value).toBe(4);
+        expect(value).toEqual(4);
+    });
+});
+/**
+ * For floating point equality, use toBeCloseTo instead of toEqual,
+ * because you don't want a test to depend on a tiny rounding error.
+ */
+describe('adding floating point numbers', () => {
+    it('test float numbers', function () {
+        const value = 0.1 + 0.2;
+        //This won't work because of rounding error
+        //uncomment to see the value. 
+        //when JS adds floating numbers you'd actually get 0.30000000000000004
+        //expect(value).toBe(0.3);           
+        expect(value).toBeCloseTo(0.3); // This works!.
+    });
+});
+describe('Opposite of matcher', () => {
+    it('opposite', function () {
+        // Here we are testing if 5-4 is NOT equal to zero.
+        expect((0, math_2.subtract)(5, 4)).not.toBe(0);
+    });
+});

@@ -1,0 +1,24 @@
+1. mkdir ts-decorators
+cd ts-decorators
+
+2. npm init -y
+
+
+3. npm install -D typescript @types/node
+
+4. package.json
+"scripts": {
+    "build": "tsc"
+  }
+
+5. tsc --init, tsconfig.json
+
+ "experimentalDecorators": true,                  
+     "emitDecoratorMetadata": true,        
+
+6. create index.ts 
+console.log("Hello, world!");
+
+7. 
+tsc - compiling ts program ts -> js -> compiling stage -> tsc index.ts
+node -  running js program	node index.js	no

@@ -1,0 +1,38 @@
+mkdir my-sample-react-ts-webpack
+cd my-sample-react-ts-webpack
+
+npm init -y
+
+npm install --save-dev webpack webpack-cli
+npm install --save react react-dom
+npm install --save-dev @types/react @types/react-dom
+npm install --save-dev typescript ts-loader source-map-loader
+
+
+Let us also manually add a few different files and folders under our "my-sample-react-ts-webpack":
+
+We'll add webpack.config.js for adding Webpack related configurations.
+We'll add tsconfig.json for all of our TypeScript configs.
+Add server.js for starting our app.
+Add a new directory "src" inside "app".
+We'll also add new directory "components" inside "app".
+Finally, we'll add App.tsx inside "components", and index.tsx and HelloWorld.tsx inside components.
+
+
+npm i express
+npm i -D @types/express
+npm i ejs
+
+
+
+npm install -g parcel-bundler
+npm install --save-dev parcel-bundler
+
+
+"scripts": {
+    "start": "parcel index.html"
+},
+
+npm run start
+npm run build
+

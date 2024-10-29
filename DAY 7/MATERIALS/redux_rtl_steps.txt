@@ -1,0 +1,24 @@
+1. Imports
+import React from 'react';
+import { Provider } from 'react-redux';
+import { render, fireEvent, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+
+import App from './App';
+import store from './store/store';
+
+2. Load data 
+const articles:[
+        {
+            id:1,
+            title:"Demo 1",
+            body: "Demo Article 1"
+
+        },
+        {
+            id:2,
+            title:"Demo 2",
+            body: "Demo Article 2"
+
+        },
+    ]

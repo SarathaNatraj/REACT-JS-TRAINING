@@ -1,0 +1,80 @@
+1.Code Splitting in React
+	i. Code Splitting
+	ii. React.lazy & Suspense
+	iii. Error Boundaries
+	vi. Route-Based code splitting
+	Named Exports
+
+i. Code splitting - 
+	feature supported by bundlers like WebPack and Parcel create to multiple bundles that dynamically loaded at run time.
+
+make your code efficient
+bundle contains only required modules.
+
+// syntax for code splitting scenario
+// import ("<module-name>"). then({ // statements to be executed})
+
+ii. React lazy & suspense
+
+import {<compName>} from '<fileName>'; - normal way of import
+const compName = React.lazy (() => import ('<fileName>')); - dynamic import
+
+ex:-
+import {Login} from './Login';
+const Login = React.lazy(() => import('./Login'));
+
+//dynamic import - loads the component on demand
+
+this should be used with <Suspense> </Suspense> tag
+React.Suspense  to conditionally halt a components rendering until it has loaded.
+
+So wrap the dynamic import component inside the Suspense tag
+
+<Suspense>
+	<Login/>
+</Suspense>	
+
+
+iii.Error Boundaries
+already discussed
+
+iv.  Route-Based code splitting
+
+
+import {<compName>} from '<fileName>'; - normal way of import
+const compName = React.lazy (() => import ('<fileName>')); - dynamic import
+
+ex:-
+import {Login} from './Login';
+const Login = React.lazy(() => import('./Login'));
+
+//dynamic import - loads the component on demand
+
+this should be used with <Suspense> </Suspense> tag
+React.Suspense  to conditionally halt a components rendering until it has loaded.
+
+So wrap the dynamic import component inside the Suspense tag with Router
+
+<Router>
+	<Suspense>
+		<Login/>
+	</Suspense>
+</Router>	
+
+
+v) Named Exports
+
+create multiple components inside a single file, at least line have export statement
+
+export {all components};
+
+wherever you want to use it up,use import first with the name (as keyword)
+
+import * as MyComponents from './MyComponents'
+
+and access it with MyComponents.<name_of_components>
+
+<App>
+	<MyComponents.sayHello() />
+</App>
+

@@ -1,0 +1,7 @@
+Functional components:-
+1. Have a image with Like and Dislike button to increment the likes and dislikes count.
+2. Convert your Portfolio in to react app
+
+Class components:-
+1. Create a Student class components with basic details rollNo: 101, name:Sanas, emai:sanas@gmail.com, Have change Deatils button to change the details of the student.
+2. Create a Department class component, Project class component as separate, finally integrate the Department and Project component inside the Employee component

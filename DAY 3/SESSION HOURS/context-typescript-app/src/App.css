@@ -1,0 +1,33 @@
+.App {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pageLayout{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  border: 0.1rem solid tomato;
+  border-radius: 0.3rem;
+  width: 50%;
+  height: 100px;
+  margin: 10px;
+}
+button{
+  width: 100px;
+  height: 25px;
+  background-color: aqua;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+div{
+  margin: 10px;
+  min-width: 100px;
+}
+.title{
+  max-width: 100px;
+}

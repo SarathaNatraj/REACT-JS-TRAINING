@@ -1,0 +1,87 @@
+Step 1: Install
+
+npm i jest @types/jest ts-jest typescript -D
+
+Step 2: Configure Jest
+
+jest.config.ts
+module.exports = {
+    "roots": [
+      "<rootDir>/src/__tests__"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.+(ts|tsx|js)",
+      "**/?(*.)+(spec|test).+(ts|tsx|js)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+  }
+
+ Step 3: Run tests
+package.json
+
+  "scripts":{
+    "test": "jest"
+  }
+
+Step 4: Adding files
+
+foo.ts -> src
+  export const sum
+    = (...a: number[]) =>
+      a.reduce((acc, val) => acc + val, 0);
+
+foo.test.ts -> src/__tests__
+import { sum } from "../src/foo";
+
+test('basic', () => {
+  expect(sum()).toBe(0);
+});
+
+test('basic again', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+
+
+
+
+//React + JEST +  RTL
+Step 1:
+
+npm install @types/jest @testing-library/react @testing-library/jest-dom jest ts-jest
+
+Step 2:
+jest.config.js create
+module.exports = {
+  // The root of your source code, typically /src
+  // `<rootDir>` is a token Jest substitutes
+  roots: ["<rootDir>/src"],
+
+  // Jest transformations -- this adds support for TypeScript
+  // using ts-jest
+  transform: {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+
+  // Runs special logic, such as cleaning up components
+  // when using React Testing Library and adds special
+  // extended assertions to Jest
+  setupFilesAfterEnv: [
+    "@testing-library/react/cleanup-after-each",
+    "@testing-library/jest-dom/extend-expect"
+  ],
+
+  // Test spec file resolution pattern
+  // Matches parent folder `__tests__` and filename
+  // should contain `test` or `spec`.
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+
+  // Module file extensions for importing
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
+};
+
+3. src/globals.d.ts 
+
+import "@testing-library/jest-dom/extend-expect";
+

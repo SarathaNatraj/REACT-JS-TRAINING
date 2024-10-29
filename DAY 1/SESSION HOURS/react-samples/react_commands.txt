@@ -1,0 +1,15 @@
+npx create-react-app <project-name>
+
+cd <project-name>
+
+npm start
+
+
+//router
+npm install react-router-dom
+
+//routings - Link(li), Routes, Route, BrowserRouter(App.js)
+
+
+
+

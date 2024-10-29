@@ -1,0 +1,55 @@
+Memoization - 
+
+ optimization tech, accelerating computer pgms, by caching the results of heavy fn calls & return them when simplier inputs are given
+	 
+	i. Pure components
+	ii. Pure components class
+	iii. Memo HOC
+	iv. useCallBack
+	v. useMemo
+	
+i)PureComponent
+
+expected o/p
+Parent render
+Parent render
+Child render
+Parent render
+
+
+actual o/p
+Parent render method
+Parent render method
+Child render
+Child render
+Child render method
+Child render method
+
+Prevent child re-rendering it up, it should extend from React.PureComponent - shouldComponentUpdate(), it will check current class for update in state or props, if there is change it call the render(), if not nothing
+
+ii) React.memo
+
+using this we could prevent re-rendering of functional components unnesscessary.
+
+create Child / any components wrap with React.memo
+
+syntax:-
+export default React.memo(ChildFun);
+
+iii). useCallBack()
+Parent-Child , 
+
+Use inside Parent Child , where you are updating state variable, (handleClick)
+
+const handleClick =  useCallback(()=>{
+        console.log(count);
+        setCount(count+1);
+    },[count]);
+
+Child component -> Wrap should with React.memo()
+
+iv) useMemo 
+
+when expensive calculation that need to be optimized or memozied.
+
+const factorial = useMemo (() => factorialOf(number),[number]);

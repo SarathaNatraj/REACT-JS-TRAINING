@@ -1,0 +1,157 @@
+React is a javascript library for building UI
+React is used to build a single page application
+React allows us to create reusable component UI
+
+React was created by FaceBook
+React creates a VIRTUAL DOM in memory
+
+Javascript -> 
+var firstname=document.getElementById("fname").value;
+fname is the id of the HTML Element and retreive the value entered
+We are storing in the javascript variable called firstname
+
+Javascript will manipulate the browser's DOM directly and manipulates the value
+virtual -> something not existing physically. it is not there in reality
+virtual is a temp memory
+React will store your entire HTML Document as a virtual DOM (temp memory)-it will make all necessary changes in the virtual DOM before changing the browser DOM
+
+react willchange only what needs to be changed
+React finds out what changes have been made and changes only what needs to be changed
+
+
+Once the virtual DOM has updated the react component compares the virtual dom updated with the snapshot of the virtual dom before the updation .
+updated copy(modified)                          Before updation ->status (snapsnot)
+By comparing the virtual DOM with pre updated  version, react figures out what exactly has to be changed
+This process is called as Diffing
+
+React -> cannot communicate with DB to get the data
+React will interact thru RESTAPI services to fetch the data
+We can connect to API using Axios / Fetch -> Library
+It will get the data in JSOn Data
+
+"name":"Deepa",
+"age":45
+display the data in html elements which will render the page
+
+
+React is based on Javascript
+JSX-> javascript XML
+JSX allows us to write HTML in React
+It has installed an extension called babel where we can write JS and HTML code together in react'
+
+
+without JSX
+const myElement=React.createElement('h1',{},'This is without the support of JSX');
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(myElement);
+
+
+JSX
+const myElement=<h1>With JSX</h1>;
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(myElement);
+
+
+react project name -> everything should be in lowercase->MyFirstReactProject -> wrong
+myfirstreactproject -> correct
+Function/Class -> FirstExample /Firstexample -> correct
+firstexample -> wrong
+
+
+
+
+react files can have an extension .js or .jsx
+
+React is a component based technology
+2 ways to create a component
+1. Function
+2. class
+
+function FunctionName()
+{
+return(//render any html code);
+}
+
+class component will inherit from React.Component class
+class FirstExample extends React.Component
+{
+render()
+{
+//render the html code
+}
+}
+class component-> we can have constructor to initialize the values
+we can define properties
+functions
+functions can be associated with events 
+
+
+css -> we define style which react components can use
+how to refer css in react
+import './firstclass.css'
+
+to apply the styles for specific tag
+<h1 className="body h1">My First React Class</h1>
+
+
+Events in React
+1. event function should follow camel casing
+2. in .JSX you pass a function as a event handler rather than a string
+3. prevent default behaviour , when we submit the page data , it should not reload the entire page content
+functioname=(e)=>{
+//event code
+}
+e.preventDefault(); expicitly
+It will prevent the default behaviour of submitting
+
+e ->is a synthetic event
+they are as per w3cspec
+we need not worry on cross browser compatability
+In react like javascript we generally dont give or call addEventListener to add listeners to DOM elements after it is created
+Instead just provide a listener when the element is initially rendered
+
+
+
+show()
+{
+alert("Button clicked");
+}
+
+return(
+<button onClick={()=>this.show()}/>
+
+show=(e)=>{
+}
+
+<button onClick={this.show}/>
+
+UI -> validation 
+bootstrap can also be used with react
+
+
+React , React-component , React-Renderer , babel
+UI-> DOM Manipulation methods
+
+
+UI-> State -> constructor -> retrieve the data
+Props ->
+
+
+Hooks -> Routing(navigation) 
+
+Add,update, delete , image is stored in 64bitstring -> collection(friday)
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

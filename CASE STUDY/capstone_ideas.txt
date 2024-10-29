@@ -1,0 +1,13 @@
+Project Overview: Task Management App
+The project will be a simple Task Management Application where users can:
+
+View a list of tasks fetched from a public API.
+Add new tasks.
+Mark tasks as completed.
+Delete tasks.
+Technologies Used
+Next.js: For server-side rendering and routing.
+React: For building UI components.
+TypeScript: For type safety.
+Axios: For making HTTP requests.
+CSS Modules: For styling components.

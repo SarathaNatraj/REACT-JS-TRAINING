@@ -1,0 +1,5 @@
+docker build -t react-app-demo:latest .
+
+docker run --name react-app -d -p 3000:5000 react-app-demo:latest
+
+docker images

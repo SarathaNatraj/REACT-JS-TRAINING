@@ -1,0 +1,209 @@
+1. mkdir ts-webpack-demo
+
+	cd ts-webpack-demo
+	npm init --yes
+
+
+2. Adding React and TypeScript
+
+npm install react react-dom
+npm install --save-dev typescript
+npm install --save-dev @types/react @types/react-dom
+
+3.touch tsconfig.json
+
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
+  },
+  "include": ["src"]
+}
+
+4. Adding a root React component inside src index.tsx
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+const App = () => (
+  <h1>My React and TypeScript App!</h1>
+);
+
+ReactDOM.render(
+  <App />,
+  document.getElementById("root")
+);
+
+5. Adding Babel
+
+npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript @babel/plugin-transform-runtime @babel/runtime
+
+@babel/core: As the name suggests, this is the core Babel library.
+@babel/preset-env: This is a collection of plugins that allow us to use the latest JavaScript features but still target browsers that don’t support them.
+@babel/preset-react: This is a collection of plugins that enable Babel to transform React code into JavaScript.
+@babel/preset-typescript: This is a plugin that enables Babel to transform TypeScript code into JavaScript.
+@babel/plugin-transform-runtime and @babel/runtime: These are plugins that allow us to use the async and await JavaScript features.
+
+6.Configuring Babel .babelrc inside root
+
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ]
+}
+
+7. Adding linting -  analyse check for potential errors
+
+npm install --save-dev eslint eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+eslint: This is the core ESLint library.
+eslint-plugin-react: This contains some standard linting rules for React code.
+eslint-plugin-react-hooks: This includes some linting rules for React hooks code.
+@typescript-eslint/parser: This allows TypeScript code to be linted.
+@typescript-eslint/eslint-plugin: This contains some standard linting rules for TypeScript code.
+
+8. Configuring linting - .eslintrc.json inside root folder
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
+}
+
+9. Adding webpack
+
+npm install --save-dev webpack webpack-cli @types/webpack
+npm install --save-dev webpack-dev-server @types/webpack-dev-server
+npm install --save-dev babel-loader
+npm install --save-dev ts-node
+npm install html-webpack-plugin
+
+10. configuring webpack.config.ts
+
+import path from "path";
+import { Configuration } from "webpack";
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
+const config: Configuration = {
+  entry: "./src/index.tsx",
+  module: {
+    rules: [
+      {
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react",
+              "@babel/preset-typescript",
+            ],
+          },
+        },
+      },
+    ],
+    
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ inject: true, template: path.join('index.html') }),
+   
+    new ForkTsCheckerWebpackPlugin({
+      async: false,
+      
+    }),
+  ],
+
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+    alias : {
+        react:path.resolve('./node_modules/react'),
+        'react-dom': path.resolve('./node_modules/react-dom'),
+    }
+  },
+ output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+  mode:'development'
+};
+
+export default config;
+
+11. Adding type checking into the webpack process
+
+npm install --save-dev fork-ts-checker-webpack-plugin @types/fork-ts-checker-webpack-plugin
+
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+
+const config: Configuration = {
+  ...,
+  plugins: [
+    new ForkTsCheckerWebpackPlugin({
+      async: false,
+          }),
+  ],
+};
+
+12. Adding npm scripts - package.json, 
+
+ "browser" :{
+    "[module-name]" :false
+  }
+
+"scripts": {
+ "start": "webpack serve --open",
+    "build": "webpack --mode development",
+    "prod" : "webpack --mode production"
+  }
+13. Add any components with App.tsx , Simple counter.tsx
+
+14. npm run build - create dist folder
+14. npm run start - start the server
+
+
+
+
+

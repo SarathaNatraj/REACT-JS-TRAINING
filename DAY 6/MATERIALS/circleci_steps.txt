@@ -1,0 +1,15 @@
+1. Select a project
+In the CircleCI web app, select Projects
+ from the sidebar. Find your repository, and click Set Up Project. Don’t see your repository? Use the org selector in the top left corner to find the correct organization.
+Select Projects
+2. Select a config.yml
+In the “Select your config.yml file” modal, select Fast, then click Set Up Project. Choose the Hello World sample configuration file.
+Choose Config
+3. CircleCI config editor
+You are now in the CircleCI config editor, pre-populated with a sample config.yml file. Click Commit and Run.
+
+This will create a .circleci/config.yml file at the root of your repository on a new branch called circleci-project-setup.
+Config Editor
+4. Congratulations 🎉
+You should soon have a passing pipeline. If you are happy with this configuration, merge it into your main branch, or continue to make changes.
+Green Pipeline Build

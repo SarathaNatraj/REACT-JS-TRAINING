@@ -1,0 +1,30 @@
+{
+[
+	{
+    "employees": [{
+        "id": 1,
+        "name": "Reema",
+        "location": "Chennai",
+        "adderss": "South street"
+    }, {"id": 2,
+        "name": "Prakash",
+        "location": "Chennai",
+        "adderss": "South street"
+    }],
+	"departments" : [{
+			"id":1,
+			"name":"Development"
+	},{
+			"id":2,
+			"name":"Testing"
+	}],
+	"projects" : [{
+		"id":1,
+		"name":"Core Java Project"
+	},{
+			"id":2,
+			"name":"Angular Project"
+	}]
+	]
+	}
+}

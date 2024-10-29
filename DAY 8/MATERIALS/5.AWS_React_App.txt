@@ -1,0 +1,7 @@
+1. Make Proper app inside Github
+2. AWS Console -> Login
+3. Search for AWS Amplify 
+4. Create a project like - react-app-demo (5 mins)
+5. Amplify Hosting -> Build an app -> Choose GitHub
+6. Build -> Create Role ->
+7. Save and Deploy

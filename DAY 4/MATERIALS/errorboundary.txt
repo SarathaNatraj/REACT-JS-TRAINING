@@ -1,0 +1,60 @@
+1. Adding Error Boundary 
+import * as React from 'react'
+import ReactDOM from 'react-dom'
+import {ErrorBoundary} from 'react-error-boundary'
+
+interface ErrorProps{
+  error:Error
+  
+}
+
+
+function ErrorFallback(props:ErrorProps) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{color: 'red'}}>{props.error.message}</pre>
+    </div>
+  )
+}
+
+interface MessageProps {
+  subject: string;
+}
+
+
+function Greeting(props:MessageProps){
+  return <div>Hello {props.subject.toUpperCase()}</div>
+}
+
+function Farewell(props:MessageProps){
+  return <div>Hello {props.subject.toUpperCase()}</div>
+}
+
+
+
+
+export const App = () => {
+  try {
+    return (
+      <div>
+        <Greeting subject='Math' />
+        <Farewell subject='Eng' />
+      </div>
+    )
+  } catch (error:any) {
+    return <ErrorFallback error={error} />
+  }
+}
+
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
+
+2. React Error Boundary
+This is where the Error Boundary feature comes in to play. An "Error Boundary" is a special component that you write to handle runtime errors like those above. For a component to be an Error Boundary:
+
+It must be a class component 🙁
+It must implement either getDerivedStateFromError or componentDidCatch.
+
+

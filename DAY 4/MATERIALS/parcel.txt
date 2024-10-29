@@ -1,0 +1,53 @@
+1. mkdir <dirName>
+
+2. npm init --yes
+
+3. Install dependencies
+ npm i react react-dom
+ npm install typescript --save  
+ npm install @types/react @types/react-dom --save
+ npm i -D parcel typescript @types/react @types/react-dom
+
+4. tsconfig
+ tsc --init
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["DOM", "ESNext"],
+    "jsx": "react-jsx"
+  }
+}
+
+5. touch index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React (Parcel + TypeScript)</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>
+
+6. touch index.tsx
+import { createRoot } from 'react-dom/client';
+import { App } from './App';
+
+const root = createRoot(document.getElementById('app') as HTMLElement);
+
+root.render(<App />);
+
+7. touch App.tsx
+const App = () => <div>Hello Parcel</div>;
+
+export { App };
+
+
+8. npm run build
+9. npm start

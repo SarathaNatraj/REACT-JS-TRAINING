@@ -1,0 +1,29 @@
+Server Side Cache
+1. create directory, change dir
+2. npm init --y - create package.json
+3. npm i express - installing server 
+4. create index.js - create index.js
+5. Paste the code in index.js
+function wait(ms){
+    var start = new Date().getTime();
+    var end = start;
+    while(end < start  + ms){
+        end = new Date().getTime()
+    }
+    console.log(" done with long operation");
+    
+}
+
+const express = require('express');
+const app = express();
+const log = console;
+
+app.get('/', (req, res) => {
+    wait(1000);
+    res.send("message from server");
+})
+
+app.listen(3000, () => 
+    console.log('Server:3000'));
+
+6. start the node ./

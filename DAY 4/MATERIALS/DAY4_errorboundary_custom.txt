@@ -1,0 +1,38 @@
+import ErrorBoundary from "./ErrorBoundary";
+import React from "react";
+import { FallBackUI } from "./ErrorBoundary";
+//Component for fallback UI:
+
+const BuggyComponent = () => {
+  const [count, setCount] = React.useState(0);
+
+  const increaseCounter = () => {
+    setCount(preVal => preVal + 1);
+  }
+    if(count === 5) {
+      throw new Error("Crashing the app!!");
+    }
+
+  return (
+    <>
+      <div className="counter--block">
+        <span>Counter</span>
+        <span>{count}</span>
+      </div>
+      <button onClick={increaseCounter}>Increase count</button>
+      </>
+  );
+}
+
+export const App = () => {
+
+  return (
+    <div>
+    <h1>Counter Example</h1>
+      <ErrorBoundary >
+        <BuggyComponent />
+      </ErrorBoundary>
+    </div>
+  );
+}
+

@@ -1,0 +1,14 @@
+You should see your pipeline start to run automatically—and pass!
+
+1. So, what just happened?
+Click on the green Success button to see details about the workflow. say-hello-workflow ran one job called say-hello.
+Green Success Button
+2. View your results
+Click the say-hello job to see the steps in this job:
+Spin up environment
+Preparing environment variables
+Checkout code
+Say hello
+Steps in Pipeline Job
+3. Collaborate with teammates
+It is easy for teammates and collaborators to view and follow your projects. Teammates can make a free CircleCI account at any time to view your pipelines, even if they are not committing any code.

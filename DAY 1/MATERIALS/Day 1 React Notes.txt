@@ -1,0 +1,88 @@
+MCQ test on HTML,CSS , Bootstrap and Javascript
+
+Lab Assessment -> each unique questions
+1.5 hrs to complete 
+
+College Fest and lab assessment review will be conducted
+
+React->it has index.html -> home which will be loaded only once 
+rest all pages which is requested will be loaded dynamically on top of index.html
+
+page post back will not happen in SPA which was the way the traditional web application used to work
+
+1. project name , entire name has to be in lower case
+npx create-react-app reactproject
+
+cd reactproject
+
+2. npm start will start the react server
+
+it will start on localhost:3000
+
+under public folder -> index.html -> home page which will be rendered on the browser
+
+Index.html has a div tag
+Index.js -> src -> refer the div tag using document.getElementById("root");
+
+root.render(<App/>
+
+node_modules is a  directory .it has all the library to work with react applications.
+package.json has all packages required in react
+
+
+react is based on Javascript
+every page we design in react is called component
+React is a component based technology
+the react components have an extension .js
+we can create react code as a class or as a function
+render()-> we can design any html content
+all html tags should be inside a parent container tags
+function -> return
+class -render()  //wrong way of rendering
+{
+<h1></h1>
+<ol>
+<li>...</li>
+</ol>
+<table>
+<tr><td>....
+</table>
+}
+
+render() //correct way of doing
+{
+<div>  -- parent container
+<h1></h1>
+<ol>
+<li>...</li>
+</ol>
+<table>
+<tr><td>....
+</table>
+</div>
+}
+export default functionname/classname
+
+any javascript calculation is done before the return()
+the variable values of javascript is displayed in any html tag using {variable name} -> expression
+
+Si.js
+calculate si -> ptr/100<
+display the o/p of interest and total amount of maturity (p+intr) in 2 different  <h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

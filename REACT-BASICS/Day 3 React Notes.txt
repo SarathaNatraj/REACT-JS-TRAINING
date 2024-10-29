@@ -1,0 +1,99 @@
+style
+3 common ways of referring css in react
+inline styling
+CSS Stylesheets
+CSS Modules
+
+Inline style sheet
+to style an element with the inline stylesheet we use the style attribute
+the value has to be given {{ }}
+eg:
+HTML
+<h1 style="background-color='red';">Heading 1</h1>
+
+React
+<h1 style={{backgroundColor:"red";color:'Yellow';}}>Heading 1</h1>
+
+we create a stylesheet file with .css extension and we will refer inside the .jsx file using import
+Like HTML we dont use the <link> tag in react
+
+CSS Modules
+
+constructor
+props
+state to retreive data from the React UI
+
+component constructor
+In react constructor is defined using constructor()
+constructor can be overloaded
+
+constructor() //default constructor
+constructor(name,age) //parameterized constructor
+
+in react at any given point of time , we can have only one type of constructor
+We cannot define both parameterized and default constructor
+
+
+the constructor function is a place where we initialize the components propertyprop
+the constructor is called when the component is initiated
+
+To define properties for a component we use an object called state
+to call parent class constructor , we use super()
+
+in constructor , react will not allow to initalize any object
+doj:new Date()
+
+
+props-> stands for property
+props are arguments passed into a react component
+props are passed to a component via html attributes
+
+React props are like fuctions arguments in javascript and attributes in HTML
+
+
+UI elements values we retreived using document.getElementById("");
+UI elements values we retreived using  event.target.name and event.target.value
+
+
+manipulation of DOM UI -> event.target.name 
+event.target.value
+event.target gives the details of the element that triggers the event
+event.target.name -> the name value that is assigned to the html element
+event.target.value -> give the value user entered on the html element which triggered this event
+
+
+
+class Employee
+{
+private int empid;
+private string empname;
+Employee()
+{
+empid=100;
+empname="Frank";
+}
+public void SetEmpId(int id)
+{
+empid=id;
+}
+public int GetEmpId()
+{
+return empid;
+}
+public void SetEmpName(string name)
+{
+empname=name;
+}
+public string GetEmpName()
+{
+return empname;
+}
+}
+
+OnInput()
+onChange()
+difference between these 2 events
+
+
+
+

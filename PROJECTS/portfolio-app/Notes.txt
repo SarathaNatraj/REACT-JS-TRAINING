@@ -1,0 +1,32 @@
+Steps for implementing the routing
+
+
+1. Create react project 
+	'npx create-react-app <app-name>'
+
+2. Install react-router-dom
+	'npm install react-router-dom'
+
+3. Create the components in the components folders
+
+4. App.js
+		<Router>
+			
+			<nav>
+			</nav>
+			
+			<Routes>
+				<Route path="/" element={<Home/>} />
+				<Route path="/about" element={<About/>} />
+			</Routes>
+			
+		</Router>
+
+ 5. Tags used
+	 Router - parent tag
+	 Routes - collection of routes
+	 Route - individual route(path) with the component(element) gets loaded.
+ 
+ 
+ PropsTypes - Ensures the component's property types
+ 

@@ -1,0 +1,157 @@
+const inputdata=wrapper.find('input[type="number"]);
+inputdata.simulate("change",{
+         target:{name:'principal',value:2000}
+    });
+
+memoization is react
+1. in most of the web application we may frequently request a particular web page which has very expensive function so that when it same page, same parameters fetching the page from the react server and re rendering on the browser may be costly rendering -> CPU time , Processing http client request, response on the react server. 
+It will lead to performance issues
+
+so to do code optimization and increase the performance of a program by storing the results of some expensive functions so that we dont need to call the function when the same input is givem is called memoization
+
+React has to be a function component and we have memoization hook
+React component is a class component inside of using memoization hook we use one of the life cycle methods shouldComponentUpdate()
+for memoization implementation my class has to extend from PureComponent class
+
+
+immutable.js
+immutable is a javascript library that supports many immutable data structures
+It means that once created the data cannot be changed
+It makes maintaining immutable data structures easier and efficient
+Immutable.JS supports data structure like List, Map, set 
+on redux if we want change data of a store which is a complex object then immutable.js will help to do
+.set(key, Value)
+based on key we can change 
+value -> will be the new value we enter
+
+eg:redux
+export const initialState={
+loaded:false,
+disabled:false
+};
+export default function TestReducer(state,action)
+{
+switch(type)
+{
+case ActionTypes.setLoadedState:
+return {
+ ....state,
+loaded:payload
+}}
+return state;
+}
+
+
+eg: immutable.js 
+export const initialState={
+loaded:false,
+disabled:false
+};
+export default function TestReducer(state,action)
+{
+switch(type)
+{
+case ActionTypes.setLoadedState:
+
+return state.set('loaded',payload);
+}
+return state;
+}
+
+npm install immutable.js --save
+
+
+api - > http url -> access the database
+GET -> select query in db and fetch data
+POST -> insert query in db to insert new row in table
+PUT -> update query in db to edit existing data in table
+DELETE -> delete query - delete data from table
+
+
+React->UI -> API(call) thru the URL -> hit the database ->get the data in json format -> which will be rendered in UI
+async call and fetch the data
+npm install react-async --save
+async data is fetched using javascript promise
+to make api call -> fetch , axios
+
+
+Rest API and React application if it has to communicate and exchange data then CORS(cross origin resource sharing) has to be enabled in API
+Then only both the React and RESTAPI can communicate and exchange data
+React -> http://localhost:3000/FetchAPI
+RestAPI -> https://jsonplaceholder.typicode.com/users
+all mordern browser will not allow 2 urls to communicate
+so we need to enable CORS for both URLs to communicate
+
+rxJS and Redux Observables
+Redux observables is a middleware for redux that allows developers to work with async actions
+Before Redux observables , we had redux-thunk and redux-saga which allow async calls
+
+This follows observable pattern
+
+1. async and await
+2. react-async 
+3. rxJS -> async and event based calls
+
+
+Implementing Undo History
+this concept is basically building an undo and redo functionality into an app
+Algorithm to handle undo history in redux
+1. redux will not maintain state in every component 
+It will maintain state of all components in a single store 
+
+Handling Undo 
+1. Remove the last element from the past 
+2. we have to set the present element we removed from the previous step
+3. Insert the old present state at the beginning of the future
+
+{
+past:Array<T>,
+present:T,
+future:Array<T>
+
+const initialState={
+past:[],
+present:null,
+future:[]
+}
+
+function undoable(state=initalState,action)
+{
+const[past,present,future]=state
+switch(action.type)
+{
+case 'UNDO':
+const previous=past[past.length -1]
+const newPast=past.slice(0,past.length -1)
+return{
+past:newPast,
+present:previous,
+future:[present,...future]
+}
+}
+
+Form Lifting State Up
+Suppose if we are making changes, we need several components to reflect the same changing data.
+We will implement the changes in the ancestor component and rest components are made as child so that the changes are reflected to all child components
+
+
+PersonInfo -> name, gender, age, mobno
+ |
+Student  Employee  Artist  Politician
+
+
+getting the property from parent to child is called Inheritance
+The classes and objects created thru inheritance is tightly coupled
+If u change some property in the parent class , there is a risk of breaking the code
+
+Classes and objects we create should be loosely coupled
+We can change some components easily without breaking the code
+This concept is called composition
+
+House -> demolish kitchen and change it to mordern kitchen
+
+
+Conditional Rendering, Lists and Keys,Forms Lifting State Up, Composition vs Inheritance Test Automation using JEST and Enzyme Application State Management with Redux,React-Redux, App Structure, Basic Data Flow, Redux Data, Async and Data Fetching, RxJS &amp; Redux-Observables, Reducers &amp; Actions, Performance and Normalizing Data, Asynchronous Operations,Memoization, Implement Undo History, ImmutableJS
+
+
+

@@ -1,0 +1,66 @@
+1. project scenario
+
+select * from Transaction where accid=16611010007000 and TransactionDates between '01/07/2022' to '12/07/2022'
+
+UI wud have got this data as an array
+
+TransactionNo  Transaction Date  Remarks    Amount(DR)    Amount(cr)   Total Balance 
+1200	          			
+
+2. AccountNo , Name
+Key/Value Pair
+JSON Format -> Bind it to dropdownlist
+Display Member  -> Name 
+
+On selecting the name from the dropdownlist -> It has to give me his empId, Name
+List of EmpId and Name
+Display member->Name
+Value Member -> empId
+on choosing the Name-> his empId is retrieved
+Name-> Value
+EmpId -> Key
+Binding the list of Key.Value Pair
+
+
+
+
+
+
+3. Uploading Images -> UI -> Image path will be a fake path
+We need to convert the image to base64string and store in the DB
+
+Display a base64image back into img control
+
+
+
+4. List of data and display in table format, how to delete rows of data selected by the user without reloading the page
+
+
+
+
+----------------------------
+
+
+
+class name / function name and file name need not be same in React
+
+import classname/function from './filename';
+
+
+
+generalization vs specialization
+
+web pack
+
+Testing (Javascript/React)
+
+HDB -> banking -> project specifications
+
+
+
+
+
+
+
+
+

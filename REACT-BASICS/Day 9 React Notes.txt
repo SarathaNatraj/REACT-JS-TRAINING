@@ -1,0 +1,73 @@
+generalization vs specialization
+React Redux
+memoization
+presentation
+
+react -ui
+how to retreive data from UI and store the values
+this.state
+props
+UseState()
+Storage-> saving 
+Retreive data from storage
+
+Redux is another state container for javascript application
+Page 1-> this.state -> class component -> 
+page 2-> function component -> UseState() -> hook
+As the application grows keeping the data organized and maintain data flow will become difficult
+We need a single point in which the entire application data is stored
+This we call it as store. Store is a global oject which all the web pages can access
+3 principles of redux
+1. Single source of truth -> 1.for the entire redux application we can create 1 store
+Becoz the application data is globally available in the store , it helps debugging easier and development faster
+
+2. state is readonly -> the state value can be changed only by emitting some action ( call an event)
+We cannot change the values of the state variables directly in the store
+In store the state is readonly
+
+
+3. any changes are made with the help of functions
+pure functions written to change the state variables in the store is called reducers
+reducer is a centralized place for state modification
+State and action as arguments and returns a newly updated state
+
+
+to work on redux
+npm install --save redux
+to use redux within react application
+npm install react-redux --save
+
+
+setup for redux components
+1. application state is described by a plain object which can be stored in AppState.js
+
+2. action is a plain object that described the intention to cause change with a type property
+3. Action and state are held together by a function called reducers
+reducer -> state, action
+
+bi directional -> data can flow in 2 ways
+uni directional -> data can flow in 1 way
+redux applications follows unidirectional approach 
+
+
+create a store 
+import {createStore} from redux
+import reducer from reducers/reduce
+const store=createStore(reducer)
+
+
+
+A store has 3 important methods
+getState() -> it will retreive the current state of application data from the redux store
+dispatch->change the state value in the store , emit an action
+dispatch will emit an action to change the state value in the store
+
+subscribe is a callback that the redux store will call when the action is dispatched
+
+provider has to be used which will tell where the data is stored in redux application
+we need to give details of the store(global object tree which is storing the state of data flow in our application)
+
+how to modify the state values through actions and reducers
+
+
+

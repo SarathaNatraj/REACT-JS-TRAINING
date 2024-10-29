@@ -1,0 +1,86 @@
+useEffect
+useEffect Hook allows to perform side effects for the application
+fetching data, directly updating DOM and timers
+useEffect(function, <dependency>)
+<dependency> is optional parameter
+
+//useEffect 1st parameter is a callback function where the 1st parameter is passed
+    //2nd parameter is dependency parameter, count+1, the value of count is getting updated
+    //updated value should be reflected on count, count is passed as [dependency parameter]
+    //real time application ,tracking the no of visitors
+    //shopping cart-> no of items added to cart
+
+React useContext hook will maintain the state of the variables globally
+We can access the values from any child component or we can access the values from nested child components also
+Real Example ->After Login , which ever component we are navigating , till the user logout his username/login name has to be maintained
+
+UseRef Hook -> allows to persist values between render()
+useRef does not cause re-renders
+
+Eg: if we try to count how many times our application renders using the UseState, We will be caught in a infinite loop becz useState hook itseld causes rerender
+
+UseRef to keep track the no of times our application is rendering
+
+React - redux
+use Callback()
+useReducer()
+useMemo()
+
+Lifecycle of components
+each component in react has a lifecycle in which we can monitor and manipulate data
+There are 3 phases Mounting, Updating and Unmounting
+
+Mounting Phase 
+putting elements into the DOM
+It has 4 inbuilt methods
+constuctor()-constructor is called when the component is initiated
+We deine state and the properties/data members of a component, set the default values for the components
+getDerivedStateFromProps() -> This method is called right before rendering the elements to the DOM
+It will get the original state of the state object 
+It will take the state object as parameter and if the state object value is getting changed , it will return an object with changes to the state
+render()
+render() method is always required and it will be always called . The other methods are optional
+componentDidMount()
+This method is called after the component is rendered
+
+
+Updating
+The component is updated whenerver there is change in the component state or components property
+This has 5 inbuilt methods
+getDerivedStateFromProps()-> this is the 1st method to get called whenever a component is getting updated
+
+shouldComponentUpdate() -> bool value true/false
+the default is true
+It will show or continue rendering the component even if it is updated -> true
+It will stop the component from rendering -> false. We will not be able to see the updated value in the component
+
+render()method is always required and it will be always called . The other methods are optional
+getSnapshotBeforeUpdate() ->It will contain the prev state before the update happens
+if we want to undo the update and get the original values back we can always get from this method
+componentDidUpdate() -> it will call after the component is updated
+
+
+
+Unmounting
+componentWillUnmount()
+It will be called when component is about to be removed from the DOM
+
+
+
+
+AZ900 =>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

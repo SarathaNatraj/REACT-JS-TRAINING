@@ -1,0 +1,107 @@
+Webpack
+
+Webpack is a static module bundler for a mordern javascript application
+webpack -> javascript and its supporting files
+Images, audio,video files
+Additional library we install
+
+
+Development system
+
+Production / Deployment system
+all supporting files of our application like (video, audio clip), library , jsx we bundle it and put it in one file
+eg : bundle.js
+we will be able to access all the files stored in bundle.js and from any html i have to just refer bundle.js
+
+to do bundle we follow ES5 pr ES6 specification
+Browser will not understand ES5 or ES6 specification
+We have a S/W called Babel which will convert ES spec into browser understandable format
+For that we need an Engine called babel
+
+Similar to Webpack we have other bundling sw like browserify, parsel, brunch etc
+Webpack plugin has 3 dependencies
+webpack-cli-> Webpack commands can be executed thru CLI
+webpack-dev-server-minimal server for client side development server
+html-webpack-plugin -> This will help in creating HTML Templates for our application
+
+to generate webpack.config.js we need to run 
+nox webpack-cli init
+if the 3 dependencies of webpack is not installed , it will first install all the dependencies
+then we have to re run nox webpack-cli init to generate the webpack file to bundle our react application to production environment
+
+build the react project from webpack-cli
+npm start build
+
+
+
+Chai and Mocha
+Mocha is a light weight node.js framework used for testing and Chai is given(TDD test driven development) library
+Assertions methods are defined to test
+
+Chai gives several API like assert,Expect/Should 
+
+other testing frameworks are also available like Cypress, Enzyme, SinonJS,Jest, SuperTest =all these are free and easy to implement javascript testing framework
+
+
+
+Testing -> Jest Enzyme
+
+jest is a testing tool from facebook 
+It is used to perform unit testing for javascript
+Enzyme is react specific
+enzyme has methods to test react application
+npx create-react-app projectname
+create-react-app will install testing tool
+No need for any other installation
+
+filename.test.js - > test cases
+
+Mocha and jest -> test javascript code
+Mocha -> based on node.js
+Jest -> based on Facebook
+
+Testing -> Assertion methods ->AAA -> API
+Chai -> API -> Assertion methods 
+Enzyme -> API -> React application specific
+
+ run the above test file using the command:
+
+npm run test
+
+Chai/Mocha
+describe() -> global function 
+
+it() -> small test cases is written using it function
+
+expect() -> BDD style library
+this is mainly used with non descriptions such as booleans or numbers
+should() -> BDD Style Library
+object type assertions
+assert() -> provide additional tests and browser compatible functions
+
+
+test case should be written in test.js
+npm run test
+No folder structure it is taking to load the modules
+
+
+in react application , how will the test files be executed
+files with .js extension in __tests__ folder
+Files with .test.js extension
+Files with .spec.js extension
+the files have an extension .test.js or .spec.js , the JEST tool will pick it for execution under any depth folders inside src
+
+npm test
+will run the test cases
+
+
+
+
+
+
+Presentation
+
+Generalization and Specialization
+
+React - Redux
+Memoization
